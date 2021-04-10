@@ -11,7 +11,7 @@ The editor wants to run a series of feature stories about the health risks facin
 * You need to create a scatter plot between two of the data variables such as Healthcare vs. Poverty or Smokers vs. Age.
 Using the D3 techniques, create a scatter plot that represents each state with circle elements.
 
-![]()
+![](https://github.com/poonam-ux/D3-Challenge-census_data_visualization/blob/main/D3_data_journalism/Images/default_chart_sm.png)
 
 * Pull in the data from data.csv by using the d3.csv function. 
 * Include state abbreviations in the circles.
