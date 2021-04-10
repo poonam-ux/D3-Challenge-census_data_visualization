@@ -77,6 +77,25 @@ function makeResponsive() {
             .range([height, 0]);
         return yLinearScale;
     }
+
+    // Create Axes
+    // Function for Updating xAxis when XAxis label is clicked
+    function newXAxes(newXScale, xAxis) {
+        var bottomAxis = d3.axisBottom(newXScale);
+        xAxis.transition()
+          .duration(1000)
+          .call(bottomAxis);
+        return xAxis;
+      }
+    
+      // Function for Updating yAxis when YAxis label is clicked
+      function newYAxes(newYScale, yAxis) {
+        var leftAxis = d3.axisLeft(newYScale);
+        yAxis.transition()
+          .duration(1000)
+          .call(leftAxis);
+        return yAxis;
+      }
 }
 
 // When the browser loads, makeResponsive() is called.
