@@ -80,10 +80,30 @@ function makeResponsive() {
         .call(leftAxis);
       return yAxis;
     }
+  
+    // Function for updating circles group with a transition to new circles
+    function updateCircles(circlesGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
+      circlesGroup.transition()
+        .duration(1000)
+        .attr("cx", d => newXScale(d[chosenXAxis]))
+        .attr("cy", d => newYScale(d[chosenYAxis]));
+      return circlesGroup;
+    }
+      
+    // Function for updating text group with a transition to new text
+    function updateText(textGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
+      
+      textGroup.transition()
+        .duration(1000)
+        .attr("x", d => newXScale(d[chosenXAxis]))
+        .attr("y", d => newYScale(d[chosenYAxis]))
+        .attr("text-anchor", "middle");
+      return textGroup;
+    }
   }
   
-// When Browser Loads, makeResponsive() is Called
-makeResponsive();
+  // When Browser Loads, makeResponsive() is Called
+  makeResponsive();
     
-// When Browser Window is Resized, makeResponsive() is Called
-d3.select(window).on("resize", makeResponsive);
+  // When Browser Window is Resized, makeResponsive() is Called
+  d3.select(window).on("resize", makeResponsive);
