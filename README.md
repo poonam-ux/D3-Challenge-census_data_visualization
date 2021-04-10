@@ -35,8 +35,6 @@ Updated Yaxis value and tooltips:
 
 ![](https://github.com/poonam-ux/D3-Challenge-census_data_visualization/blob/main/D3_data_journalism/Images/updated_axis_labels_and_values_sm.png)
 
-![]()
-
 * Incorporate d3-tip:
 
 While the ticks on the axes allow us to infer approximate values for each circle, it’s impossible to determine the true value without adding another layer of data. Add tooltips to your circles and display each tooltip with the data that the user has selected.
@@ -44,4 +42,8 @@ While the ticks on the axes allow us to infer approximate values for each circle
 New Axes with updated axis values and tooltips:
 
 ![](https://github.com/poonam-ux/D3-Challenge-census_data_visualization/blob/main/D3_data_journalism/Images/new_axes_with_updated_tooltips_sm.png)
+
+Responsive svg-area for changing window size: 
+
+![](https://github.com/poonam-ux/D3-Challenge-census_data_visualization/blob/main/D3_data_journalism/Images/responsive_svg_area.png)
 
