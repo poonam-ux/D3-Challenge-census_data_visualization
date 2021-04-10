@@ -36,70 +36,54 @@ function makeResponsive() {
     // Append group element & set margins - Shift (Translate) by left and top margins using Transform
     var chartGroup = svg.append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-     // Import Data from the data.csv File
-     d3.csv("assets/data/data.csv")
-     .then(function(censusData) {
- 
-     // Format/Parse the Data and convert to numerical
-     censusData.forEach(function(data) {
-       data.poverty = +data.poverty;
-       data.age = +data.age;
-       data.income = +data.income;
-       data.healthcare = +data.healthcare;
-       data.obesity = +data.obesity;
-       data.smokes = +data.smokes;
-    });
-    console.log(censusData)
-    });
-
-    // Initial (default) Params
+  
+    // Initial Params
     var chosenXAxis = "poverty";
     var chosenYAxis = "healthcare";
-
-    // Create Scales
+  
     // Function for updating xScale when XAxis label is clicked
     function xScale(censusData, chosenXAxis) {
-        var xLinearScale = d3.scaleLinear()
-          .domain([d3.min(censusData, d => d[chosenXAxis]) * 0.8,
-            d3.max(censusData, d => d[chosenXAxis]) * 1.2
-          ])
-          .range([0, width]);
-        return xLinearScale;
+      
+      var xLinearScale = d3.scaleLinear()
+        .domain([d3.min(censusData, d => d[chosenXAxis]) * 0.8,
+          d3.max(censusData, d => d[chosenXAxis]) * 1.2
+        ])
+        .range([0, width]);
+      return xLinearScale;
     }
-
+  
     // Function for updating yScale when YAxis label is clicked
     function yScale(censusData, chosenYAxis) {
-        var yLinearScale = d3.scaleLinear()
-            .domain([d3.min(censusData, d => d[chosenYAxis]) * 0.8,
-            d3.max(censusData, d => d[chosenYAxis]) * 1.2
-            ])
-            .range([height, 0]);
-        return yLinearScale;
+      
+      var yLinearScale = d3.scaleLinear()
+        .domain([d3.min(censusData, d => d[chosenYAxis]) * 0.8,
+          d3.max(censusData, d => d[chosenYAxis]) * 1.2
+        ])
+        .range([height, 0]);
+      return yLinearScale;
     }
-
-    // Create Axes
-    // Function for Updating xAxis when XAxis label is clicked
+  
+    // Function for updating xAxis when XAxis label is clicked
     function newXAxes(newXScale, xAxis) {
-        var bottomAxis = d3.axisBottom(newXScale);
-        xAxis.transition()
-          .duration(1000)
-          .call(bottomAxis);
-        return xAxis;
-      }
-    
-      // Function for Updating yAxis when YAxis label is clicked
-      function newYAxes(newYScale, yAxis) {
-        var leftAxis = d3.axisLeft(newYScale);
-        yAxis.transition()
-          .duration(1000)
-          .call(leftAxis);
-        return yAxis;
-      }
-}
-
-// When the browser loads, makeResponsive() is called.
+      var bottomAxis = d3.axisBottom(newXScale);
+      xAxis.transition()
+        .duration(1000)
+        .call(bottomAxis);
+      return xAxis;
+    }
+  
+    // Function for updating yAxis when XAxis label is clicked
+    function newYAxes(newYScale, yAxis) {
+      var leftAxis = d3.axisLeft(newYScale);
+      yAxis.transition()
+        .duration(1000)
+        .call(leftAxis);
+      return yAxis;
+    }
+  }
+  
+// When Browser Loads, makeResponsive() is Called
 makeResponsive();
-
-// When the browser window is resized, makeResponsive() is called.
+    
+// When Browser Window is Resized, makeResponsive() is Called
 d3.select(window).on("resize", makeResponsive);
