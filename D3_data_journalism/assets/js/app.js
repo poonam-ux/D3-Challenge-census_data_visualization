@@ -51,7 +51,32 @@ function makeResponsive() {
        data.smokes = +data.smokes;
     });
     console.log(censusData)
-});
+    });
+
+    // Initial (default) Params
+    var chosenXAxis = "poverty";
+    var chosenYAxis = "healthcare";
+
+    // Create Scales
+    // Function for updating xScale when XAxis label is clicked
+    function xScale(censusData, chosenXAxis) {
+        var xLinearScale = d3.scaleLinear()
+          .domain([d3.min(censusData, d => d[chosenXAxis]) * 0.8,
+            d3.max(censusData, d => d[chosenXAxis]) * 1.2
+          ])
+          .range([0, width]);
+        return xLinearScale;
+    }
+
+    // Function for updating yScale when YAxis label is clicked
+    function yScale(censusData, chosenYAxis) {
+        var yLinearScale = d3.scaleLinear()
+            .domain([d3.min(censusData, d => d[chosenYAxis]) * 0.8,
+            d3.max(censusData, d => d[chosenYAxis]) * 1.2
+            ])
+            .range([height, 0]);
+        return yLinearScale;
+    }
 }
 
 // When the browser loads, makeResponsive() is called.
