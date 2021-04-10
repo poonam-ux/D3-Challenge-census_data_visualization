@@ -13,6 +13,10 @@ Using the D3 techniques, create a scatter plot that represents each state with c
 
 ![](https://github.com/poonam-ux/D3-Challenge-census_data_visualization/blob/main/D3_data_journalism/Images/default_chart_sm.png)
 
+Default axes with tooltips:
+
+![](https://github.com/poonam-ux/D3-Challenge-census_data_visualization/blob/main/D3_data_journalism/Images/default_axes_with_tooltip_sm.png)
+
 * Pull in the data from data.csv by using the d3.csv function. 
 * Include state abbreviations in the circles.
 * Create and situate your axes and labels to the left and bottom of the chart.
