@@ -27,9 +27,13 @@ Default axes with tooltips:
 
 Place additional labels in your scatter plot and give them click events so that your users can decide which data to display. Animate the transitions for your circles’ locations as well as the range of your axes.
 
-![]()
+Multiple labels for Xaxis and Yaxis: 
 
-![]()
+![](https://github.com/poonam-ux/D3-Challenge-census_data_visualization/blob/main/D3_data_journalism/Images/new_Yaxis_selected_sm.png)
+
+Updated Yaxis value and tooltips:
+
+![](https://github.com/poonam-ux/D3-Challenge-census_data_visualization/blob/main/D3_data_journalism/Images/updated_axis_labels_and_values_sm.png)
 
 ![]()
 
@@ -37,6 +41,7 @@ Place additional labels in your scatter plot and give them click events so that 
 
 While the ticks on the axes allow us to infer approximate values for each circle, it’s impossible to determine the true value without adding another layer of data. Add tooltips to your circles and display each tooltip with the data that the user has selected.
 
-![]()
+New Axes with updated axis values and tooltips:
 
-![]()
+![](https://github.com/poonam-ux/D3-Challenge-census_data_visualization/blob/main/D3_data_journalism/Images/new_axes_with_updated_tooltips_sm.png)
+
