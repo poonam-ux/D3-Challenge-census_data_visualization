@@ -1,4 +1,4 @@
-# D3-Challenge_Data_Journalism
+# D3_Data_Journalism
 
 ### Background:
 
